@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandmarkRemark", "LandmarkRemark\LandmarkRemark.csproj", "{21A415C7-A729-4562-8D7C-D4C5D2350453}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21A415C7-A729-4562-8D7C-D4C5D2350453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A415C7-A729-4562-8D7C-D4C5D2350453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A415C7-A729-4562-8D7C-D4C5D2350453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A415C7-A729-4562-8D7C-D4C5D2350453}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8B85664-6770-48FE-88FE-1513E4B79810}
+	EndGlobalSection
+EndGlobal
