@@ -1,7 +1,16 @@
 # LandmarkRemark
 Project to showcase technical skills for TigerSpike
 
-TimeBoxed to 3.5 hours Saturday 29/11/2020 and 5 hours Sunday 30/11/2020
+TimeBoxed to 3.5 hours Saturday 29/11/2020 and 5.5 hours Sunday 30/11/2020
+Breakdown in hours:
+ Create project .5
+ Implement AGM 1.5
+ Create spec tests in preperation for backend .5
+ Setup backend 3 (errors persisted, and still persisting)
+ Implement pinService, agmService 1 
+ Update AGM 1
+ Implement worker 1
+ Update Readme .5
 
 
 ## Overview: 
