@@ -1,7 +1,7 @@
 # LandmarkRemark
 Project to showcase technical skills for TigerSpike
 
-TimeBoxed to 3 hours Saturday 29/11/2020 and 5 hours Sunday 30/11/2020
+TimeBoxed to 3.5 hours Saturday 29/11/2020 and 5 hours Sunday 30/11/2020
 
 
 # Overview: 
@@ -62,12 +62,13 @@ The decision to use Angular Google Maps was made as it fit the requirements of t
 
 Firebase was chosen as a backend service provider as I was already experenced with it and had not used Microsoft LocalDb before.
 * In hindsight, firebase was not the correct decision, AngularFire caused issues and did not work in the end, this caused the database side of this project to be redundnat.
-This ate into much of my time and I was unable to correctly showcase technical skills in regards to DBs.
+AngularFire ate into a lot of time and I was unable to correctly showcase technical skills in regards to DBs and tests.
 
 
 Bootstrap CSS, SASS, Angular CSS was not used, as it was not included in the backlog, and was deemed out of scope.
 
 Names, accounts, and search functionality were not able to be completed as I ran out of time, and AngularFire was unable to be used.
 
+Test functionality not implemented fully/correctly, inital plan was to create tests for backend functions, but that became obsolete on firebase failure.
 
 
