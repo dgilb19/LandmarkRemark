@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
 import { delay } from 'q';
+import { pinService } from '../pinService/pin.component';
 
 @Component({
     selector: 'agm',
@@ -11,8 +12,6 @@ import { delay } from 'q';
 export class agmComponent implements OnInit {
     // google maps zoom level
     zoom: number = 8;
-    //lat: number = -33.868;
-    //lng: number = 151.21;
     lat: any;
     lng: any;
 
@@ -21,10 +20,10 @@ export class agmComponent implements OnInit {
         this.startGetSetLocationWorker() 
     }
 
+    // Worker not being reached, if worker could be reached it would return the location of the user every 10 seconds
     startGetSetLocationWorker() {
         if (typeof Worker !== 'undefined') {
-            console.log('blaladdhhhhh');
-            const worker = new Worker('../src/app/workers/app.worker', { type: 'module' });
+            const worker = new Worker('.workers/app.worker', { type: 'module' });
             worker.onmessage = ({ data }) => {
                 console.log(`page got message: ${data}`);
             };
@@ -32,11 +31,9 @@ export class agmComponent implements OnInit {
         } else {
             console.log('else');
             // Web workers are not supported in this environment.
-            // You should add a fallback so that your program still executes correctly.
         }
-        
     }
-    
+
     setLocation() {
         if (navigator) {
             navigator.geolocation.getCurrentPosition(pos => {
@@ -49,69 +46,52 @@ export class agmComponent implements OnInit {
         } else {
             console.error(error);
             console.log('browser does not support geo-location');
-            // #TODO stop location loop
+            // #TODO stop location worker
         }
     }
 
-  /*  setLocation() {
-        navigator.geolocation.getCurrentPosition((position) => {
-            console.log('setting location');
-            console.log(position.coords.latitude);
-            console.log(position.coords.longitude);
-         
-        });
-    }; */ 
-
     clickedMarker(label: string, index: number) {
-    //    navigator.geolocation.getCurrentPosition(this.foundLocation, this.error);
-        this.setLocation();
-        console.log(`clicked the marker: ${label || index}`)
-        //console.log(navigator.geolocation.getCurrentPosition(success, error, options));
-    }
-    foundLocation(position) {
-        var lat = position.coords.latitude;
-        var lon = position.coords.longitude;
-        var userLocation = lat + ', ' + lon;
-        return userLocation
-       
     }
 
     error(err) {
         console.warn(`ERROR(${err.code}): ${err.message}`);
     }
 
-    mapClicked($event: MouseEvent) {
-        this.markers.push({
-            lat: $event.coords.lat,
-            lng: $event.coords.lng,
-            draggable: true
-        });
+    // obsolete function
+/*    mapClicked($event: MouseEvent) {
+        //pinService.getPinText();
+        var note = prompt("Enter a short note to save at this location!", "e.g. Great views of the river...");
+        if (note != null && note.trim() != "") {
+            console.log("setting note: " + note)
+            this.markers.push({
+                lat: $event.coords.lat,
+                lng: $event.coords.lng,
+                note: note,
+                draggable: false
+            });
+        }
+    }
+*/
+    savePinClicked() {
+        this.setLocation()
+        var note = prompt("Enter a short note to save at this location!", "e.g. Great views of the river...");
+        if (note != null && note.trim() != "") {
+            console.log("setting note: " + note)
+            this.markers.push({
+                lat: this.lat,
+                lng: this.lng,
+                note: note,
+                draggable: false
+            });
+        }
     }
 
     markerDragEnd(m: marker, $event: MouseEvent) {
         console.log('dragEnd', m, $event);
     }
 
-    markers: marker[] = [
-        {
-            lat: 51.673858,
-            lng: 7.815982,
-            label: 'A',
-            draggable: true
-        },
-        {
-            lat: 51.373858,
-            lng: 7.215982,
-            label: 'B',
-            draggable: false
-        },
-        {
-            lat: 51.723858,
-            lng: 7.895982,
-            label: 'C',
-            draggable: true
-        }
-    ]
+    // #TODO make function to retieve current pins from Firebase
+    markers: marker[] = []
 }
  
 // just an interface for type safety.
@@ -119,5 +99,6 @@ interface marker {
     lat: number;
     lng: number;
     label?: string;
+    note: string;
     draggable: boolean;
 }

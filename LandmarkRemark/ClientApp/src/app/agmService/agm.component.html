@@ -14,18 +14,10 @@
                     [label]="m.label"
                     [markerDraggable]="m.draggable"
                     (dragEnd)="markerDragEnd(m, $event)">
-
             <agm-info-window>
-                <strong>InfoWindow content</strong>
+                {{m.note}}
             </agm-info-window>
-
         </agm-marker>
-
-        <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
-                    [radius]="5000"
-                    [fillColor]="'red'"
-                    [circleDraggable]="true"
-                    [editable]="true">
-        </agm-circle>
     </agm-map>
+    <button class="btn-save-pin" (click)="savePinClicked()">Save Pin!</button>
 </div>

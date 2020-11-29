@@ -6,7 +6,6 @@ import { ServerModule } from '@angular/platform-server';
 // Components import 
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
-import { AppRoutingModule } from "./app-routing.module";
 import { agmComponent } from './agmService/agm.component';
 import { firebaseService } from './databaseCommands/firebase.service'
 
@@ -22,7 +21,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
 
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -31,12 +29,11 @@ import { AngularFireModule } from '@angular/fire';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
-
         // # firestore unable to work, cause is injector error?
-
         //AngularFireModule.initializeApp(environment.firebase),
         //AngularFirestoreModule,
+
+        // # out of scope to handle security correctly
         AgmCoreModule.forRoot({ apiKey: 'AIzaSyCKZa0a39awk0XBLRMYts7aRmJM-COCozk' })
     ],
     providers: [firebaseService],
