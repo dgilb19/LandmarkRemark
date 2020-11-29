@@ -1,35 +1,23 @@
-<h1>Angular Google Maps (AGM) Demo</h1>
-<p><a href="https://angular-maps.com/" target="_blank">Official Website</a></p>
+<header class="site-header">
+    <h1>Landmark Remark!</h1>
 
-<agm-map 
-    [latitude]="lat"
-    [longitude]="lng"
-    [zoom]="zoom"
-    [disableDefaultUI]="false"
-    [zoomControl]="false"
-    (mapClick)="mapClicked($event)">
-        <!--[mapDraggable]="false"-->
-
-    <agm-marker 
-        *ngFor="let m of markers; let i = index"
-        (markerClick)="clickedMarker(m.label, i)"
-        [latitude]="m.lat"
-        [longitude]="m.lng"
-        [label]="m.label"
-        [markerDraggable]="m.draggable"
-        (dragEnd)="markerDragEnd(m, $event)">
-      
-    <agm-info-window>
-        <strong>InfoWindow content</strong>
-    </agm-info-window>
-    
-    </agm-marker>
-  
-    <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
-        [radius]="5000"
-        [fillColor]="'red'"
-        [circleDraggable]="true"
-        [editable]="true">
-    </agm-circle>
-
- </agm-map>
+    <div class="site-header-right">
+        <form class="form-inline waves-light" mdbWavesEffect>
+            <div class="md-form mt-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <!--#TODO complete search functionality-->
+            </div>
+        </form>
+        <div class="md-form mt-0">
+            <button type="submit">Login</button>
+        </div>
+    </div>
+</header>
+<body>
+    <agm></agm>
+    <firebaseService></firebaseService>
+</body>
+<footer>
+    <p>Landmark Remark Single-Page Application to showcase technical skills for TigerSpike</p>
+    <p>See souce code here <a href="https://github.com/">Github Landmark Remark</a></p>
+</footer>

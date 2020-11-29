@@ -39,8 +39,14 @@ See PFD
 
 
 # Tasks:
-Disable map drag screen  ✔️
-Implement backend system with users. ❌ 
+
+Implement map ✔️
+Implement get location ✔️
+Implement worker to get user location every 5 seconds ✔️
+Implement backend. ❌ 
+Implement login ❌ 
+Implement pin saving to db ❌ 
+Implement pin retriving from db ❌ 
 Click on user Pin to save location (text pop up) ❌ 
 Click on other Pins to view notes (text pop up) ❌ 
 Click search icon top right to search Pins ❌ 
