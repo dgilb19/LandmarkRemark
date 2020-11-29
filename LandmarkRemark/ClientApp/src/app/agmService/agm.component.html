@@ -1,0 +1,23 @@
+<div>
+    <agm-map [latitude]="lat"
+             [longitude]="lng"
+             [zoom]="zoom"
+             [disableDefaultUI]="false"
+             [zoomControl]="false"
+             [mapDraggable]="false"
+             (mapClick)="mapClicked($event)">
+
+        <agm-marker *ngFor="let m of markers; let i = index"
+                    (markerClick)="clickedMarker(m.label, i)"
+                    [latitude]="m.lat"
+                    [longitude]="m.lng"
+                    [label]="m.label"
+                    [markerDraggable]="m.draggable"
+                    (dragEnd)="markerDragEnd(m, $event)">
+            <agm-info-window>
+                {{m.note}}
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+    <button class="btn-save-pin" (click)="savePinClicked()">Save Pin!</button>
+</div>

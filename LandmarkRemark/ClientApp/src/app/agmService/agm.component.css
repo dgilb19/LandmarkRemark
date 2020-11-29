@@ -16,6 +16,12 @@ agm-map {
     /*auto hight/flex does not work for AGM Maps*/
 }
 
+.btn-save-pin {
+    position: absolute;
+    bottom: 13%;
+    right: 2%;
+}
+
 input {
     float: right;
 }
