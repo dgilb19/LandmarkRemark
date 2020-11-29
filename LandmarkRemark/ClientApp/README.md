@@ -1,5 +1,7 @@
 # LandmarkRemark
+Project to showcase technical skills for TigerSpike
 
+TimeBoxed to 3 hours Saturday 29/11/2020 and 5 hours Sunday 30/11/2020
 
 
 # Overview: 
@@ -9,7 +11,7 @@ inital angular-google-maps (AGM) demo can be found here https://stackblitz.com/e
 
 there are some clear limitations to AGM, and in hindsight, Maps JavaScript API would potentially be a better choice. 
 
-I 
+AngularFire was unable to work, citing 'StaticInjectorErrors' meaning I could not utilise the backend I had created.
 
 
 
@@ -50,7 +52,7 @@ Implement login. ❌
 Implement pin saving to db ❌ 
 Implement pin retriving from db ❌ 
 Click on user Pin to save location (text pop up) ✔️
-Click on other Pins to view notes (text pop up) ❌ 
+Click on other Pins to view notes (text pop up) ✔️ 
 Click search icon top right to search Pins ❌ 
 
 
@@ -59,5 +61,13 @@ Click search icon top right to search Pins ❌
 The decision to use Angular Google Maps was made as it fit the requirements of the programming tests. (anaylsis can be seen above in Overview)
 
 Firebase was chosen as a backend service provider as I was already experenced with it and had not used Microsoft LocalDb before.
+* In hindsight, firebase was not the correct decision, AngularFire caused issues and did not work in the end, this caused the database side of this project to be redundnat.
+This ate into much of my time and I was unable to correctly showcase technical skills in regards to DBs.
+
+
+Bootstrap CSS, SASS, Angular CSS was not used, as it was not included in the backlog, and was deemed out of scope.
+
+Names, accounts, and search functionality were not able to be completed as I ran out of time, and AngularFire was unable to be used.
+
 
 
