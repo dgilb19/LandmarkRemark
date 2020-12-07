@@ -17,8 +17,26 @@ describe('Integration::AppComponent', () => {
         // TODO 
     });
 
-    it('should should be clickable', () => {
+    it('should be clickable', () => {
         // TODO 
     });
+
+    it('should be able to log in', () => {
+        // TODO 
+    });
+
+    it('should get all users', () => {
+        // TODO 
+    });
+
+    it('should get all user pins', () => {
+        // TODO 
+    });
+
+    it('should be able to save a pin', () => {
+        // TODO 
+    });
+
+
 });
 
