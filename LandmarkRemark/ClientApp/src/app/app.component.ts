@@ -9,6 +9,13 @@ import { MouseEvent } from '@agm/core';
 })
 
 export class AppComponent {
+  /*  constructor() {
+        let btn = document.getElementById("coolbutton");
+        btn.addEventListener("click", (e: Event) => this.getTrainingName(4));
+    }*/
+    getTrainingName() {
+        console.log("Bananananananna") 
+    }
 }
 
 interface marker {

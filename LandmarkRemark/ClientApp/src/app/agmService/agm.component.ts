@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
 import { delay } from 'q';
-import { pinService } from '../pinService/pin.component';
+//import { pinService } from '../pinService/pin.component';
 
 @Component({
     selector: 'agm',

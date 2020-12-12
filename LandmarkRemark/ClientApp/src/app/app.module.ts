@@ -7,7 +7,6 @@ import { ServerModule } from '@angular/platform-server';
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { agmComponent } from './agmService/agm.component';
-/*import { AppRoutingModule } from "./app-routing.module";*/
 import { HttpModule } from '@angular/http';
 
 //environment import
@@ -24,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
     ],
     imports: [
         BrowserModule,
-/*        AppRoutingModule,*/
         HttpClientModule,
         HttpModule,
        
