@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandmarkRemark", "LandmarkRemark\LandmarkRemark.csproj", "{21A415C7-A729-4562-8D7C-D4C5D2350453}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandmarkRemark.Tests", "LandmarkRemark.Tests\LandmarkRemark.Tests.csproj", "{549C9068-2804-4E8E-A38E-8069543AA6D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandmarkRemark.Tests", "LandmarkRemark.Tests\LandmarkRemark.Tests.csproj", "{549C9068-2804-4E8E-A38E-8069543AA6D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

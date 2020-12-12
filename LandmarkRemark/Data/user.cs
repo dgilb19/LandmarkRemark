@@ -13,11 +13,15 @@ namespace LandmarkRemark.Models
     }*/
     public class userContext : DbContext//, IDbContext
     {
-        public userContext (DbContextOptions<userContext> options)
+
+        public userContext(DbContextOptions<userContext> options)
             : base(options)
         {
         }
+        public userContext()
+        {
+        }
 
-        public DbSet<User> User { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }

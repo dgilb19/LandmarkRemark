@@ -196,3 +196,16 @@ C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netco
 C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\Moq.dll
 C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\obj\Debug\netcoreapp3.0\LandmarkRemark.Tests.dll
 C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\obj\Debug\netcoreapp3.0\LandmarkRemark.Tests.pdb
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\System.Security.AccessControl.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\System.Security.Permissions.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\System.Security.Principal.Windows.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\Daniel\source\repos\LandmarkRemark\LandmarkRemark.Tests\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll

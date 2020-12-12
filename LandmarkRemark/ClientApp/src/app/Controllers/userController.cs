@@ -15,24 +15,24 @@ namespace LandmarkRemark.ClientApp.src.app.Controllers
     {
         private readonly userContext _context;
 
-        public userController(userContext context)
-        {
+        public userController(userContext context) {
             _context = context;
         }
 
 
+
         // GET: api/user
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<user>>> Getuser()
+        public async Task<ActionResult<IEnumerable<User>>> Getuser()
         {
-            return await _context.user.ToListAsync();
+            return await _context.User.ToListAsync();
         }
 
         // GET: api/user/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<user>> Getuser(int id)
+        public async Task<ActionResult<User>> Getuser(int id)
         {
-            var user = await _context.user.FindAsync(id);
+            var user = await _context.User.FindAsync(id);
 
             if (user == null)
             {
@@ -46,7 +46,7 @@ namespace LandmarkRemark.ClientApp.src.app.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> Putuser(int id, user user)
+        public async Task<IActionResult> Putuser(int id, User user)
         {
             if (id != user.Id)
             {
@@ -73,14 +73,18 @@ namespace LandmarkRemark.ClientApp.src.app.Controllers
 
             return NoContent();
         }
+        public async Task<IActionResult> Putusery()
+        {
+            return NoContent();
+        }
 
         // POST: api/user
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<user>> Postuser(user user)
+        public async Task<ActionResult<User>> Postuser(User user)
         {
-            _context.user.Add(user);
+            _context.User.Add(user);
 
             await _context.SaveChangesAsync();
 
@@ -89,15 +93,15 @@ namespace LandmarkRemark.ClientApp.src.app.Controllers
 
         // DELETE: api/user/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<user>> Deleteuser(int id)
+        public async Task<ActionResult<User>> Deleteuser(int id)
         {
-            var user = await _context.user.FindAsync(id);
+            var user = await _context.User.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            _context.user.Remove(user);
+            _context.User.Remove(user);
             await _context.SaveChangesAsync();
 
             return user;
@@ -105,7 +109,7 @@ namespace LandmarkRemark.ClientApp.src.app.Controllers
 
         private bool userExists(int id)
         {
-            return _context.user.Any(e => e.Id == id);
+            return _context.User.Any(e => e.Id == id);
         }
     }
 }
