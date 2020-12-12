@@ -73,11 +73,7 @@ namespace LandmarkRemark.ClientApp.src.app.Controllers
 
             return NoContent();
         }
-        public async Task<IActionResult> Putusery()
-        {
-            return NoContent();
-        }
-
+      
         // POST: api/user
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.

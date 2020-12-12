@@ -1,6 +1,6 @@
 using Castle.Core.Configuration;
 using LandmarkRemark.ClientApp.src.app.Controllers;
-using LandmarkRemark.Models;
+using LandmarkRemark.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -20,43 +20,38 @@ namespace LandmarkRemark.Tests
         public IConfiguration Configuration { get; }
 
         [TestMethod]
-        public async Task TestGetUserAsync()
+        public async Task TestGetUserAsync() // Q? does this not work as I am mocking the context? 
         {
             // Arrange
             var mockSet = new Mock<DbSet<User>>();
             var mockContext = new Mock<userContext>();
             //mockContext.Setup(options => options.UseSqlServer(Configuration.GetConnectionString("userContext")));
             mockContext.Setup(m => m.User).Returns(mockSet.Object);
-
             var service = new userController(mockContext.Object);
+            
+            //Act
             await service.Getuser(1);
 
+            // Verify
             mockSet.Verify(m => m.Add(It.IsAny<User>()), Times.Once());
 
         }
-
-        private static Mock<DbSet<User>> GetQueryableMockUserDbSet()
+        public async Task TestPutUserAsync() // Q? does this not work as I am mocking the context? 
         {
-            var data = new List<User> { getUser() };
+            // Arrange
+            var mockSet = new Mock<DbSet<User>>();
+            var mockContext = new Mock<userContext>();
+            //mockContext.Setup(options => options.UseSqlServer(Configuration.GetConnectionString("userContext")));
+            mockContext.Setup(m => m.User).Returns(mockSet.Object);
+            var service = new userController(mockContext.Object);
+           // var model = new User
 
-            var mockDocumentDbSet = new Mock<DbSet<User>>();
-            mockDocumentDbSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(data.AsQueryable().Provider);
-            mockDocumentDbSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(data.AsQueryable().Expression);
-            mockDocumentDbSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(data.AsQueryable().ElementType);
-            mockDocumentDbSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
-            mockDocumentDbSet.Setup(m => m.Add(It.IsAny<User>())).Callback<User>(data.Add);
-            return mockDocumentDbSet;
-        }
+            //Act
+            //await service.Putuser(1);
 
-        private static User getUser()
-        {
-            return new User
-            {
-                Id = 1,
-                Username = "Dan",
-                Password = "pass"
+            //Verify
+            mockSet.Verify(m => m.Add(It.IsAny<User>()), Times.Once());
 
-            };
         }
     }
 }

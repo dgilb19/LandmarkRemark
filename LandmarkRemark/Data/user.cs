@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace LandmarkRemark.Models
+namespace LandmarkRemark.Data
 {
   /*  public interface IDbContext
     {
