@@ -4,7 +4,7 @@
              [zoom]="zoom"
              [disableDefaultUI]="false"
              [zoomControl]="false"
-             [mapDraggable]="false"
+            
              (mapClick)="mapClicked($event)">
 
         <agm-marker *ngFor="let m of markers; let i = index"

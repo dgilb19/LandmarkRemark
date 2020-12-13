@@ -21,7 +21,6 @@ namespace LandmarkRemark.Data
         { }
 
         public virtual DbSet<User> User { get; set; }
-
-        public DbSet<Pin> Pin { get; set; }
+        public virtual DbSet<Pin> Pin { get; set; }
      }
 }
