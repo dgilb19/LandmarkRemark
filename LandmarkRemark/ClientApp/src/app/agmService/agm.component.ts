@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
 import { delay } from 'q';
-import { pinService } from '../pinService/pin.component';
+//import { pinService } from '../pinService/pin.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ApiService } from '../apiService/api.component';
+
 
 @Component({
     selector: 'agm',
@@ -14,10 +17,35 @@ export class agmComponent implements OnInit {
     zoom: number = 8;
     lat: any;
     lng: any;
+    pins: string;
+
+
+    basePinsURL: string = 'https://localhost:44343'; // If I was completing this correctly I would abstract this out to a config file.
+
+    constructor(private apiService: ApiService) { }
+
 
     ngOnInit() {
-        this.setLocation()        
-        this.startGetSetLocationWorker() 
+        this.addMarkersFromDB()
+        this.setLocation()
+        this.startGetSetLocationWorker()
+    }
+
+    addMarkersFromDB() {
+        this.apiService.getPins().subscribe((res) => {
+            this.apiService.getPins().subscribe((res) => {
+                for (var v in res) {
+                    console.log(res[v].latitudes)
+                    console.log('adding pin: ' + res[v].latitudes + ' - ' + res[v].longitude);
+                    this.markers.push({
+                        lat: res[v].latitudes,
+                        lng: res[v].longitude,
+                        note: res[v].note,
+                        draggable: false
+                    });
+                }
+            });
+        });
     }
 
     // Worker not being reached, if worker could be reached it would return the location of the user every 10 seconds
@@ -50,39 +78,28 @@ export class agmComponent implements OnInit {
         }
     }
 
-    clickedMarker(label: string, index: number) {
+    clickedMarker(label: string, index: number) { // to avoid errors 
     }
 
     error(err) {
         console.warn(`ERROR(${err.code}): ${err.message}`);
     }
 
-    // obsolete function
-/*    mapClicked($event: MouseEvent) {
-        //pinService.getPinText();
-        var note = prompt("Enter a short note to save at this location!", "e.g. Great views of the river...");
-        if (note != null && note.trim() != "") {
-            console.log("setting note: " + note)
-            this.markers.push({
-                lat: $event.coords.lat,
-                lng: $event.coords.lng,
-                note: note,
-                draggable: false
-            });
-        }
-    }
-*/
     savePinClicked() {
         this.setLocation()
         var note = prompt("Enter a short note to save at this location!", "e.g. Great views of the river...");
         if (note != null && note.trim() != "") {
             console.log("setting note: " + note)
-            this.markers.push({
-                lat: this.lat,
-                lng: this.lng,
-                note: note,
-                draggable: false
+            var pin = {
+                "Userid": 1, // #TODO handle users correctly, this would be the Id of the user loged in.
+                "Longitude": this.lng,
+                "Latitudes": this.lat,
+                "Note": note
+            }
+            this.apiService.setPin(pin).subscribe((res) => {
+                console.log("Created a pin");
             });
+            this.addMarkersFromDB() // this is not working? 
         }
     }
 
@@ -90,7 +107,6 @@ export class agmComponent implements OnInit {
         console.log('dragEnd', m, $event);
     }
 
-    // #TODO make function to retieve current pins from Firebase
     markers: marker[] = []
 }
  

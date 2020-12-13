@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandmarkRemark", "LandmarkRemark\LandmarkRemark.csproj", "{21A415C7-A729-4562-8D7C-D4C5D2350453}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandmarkRemark", "LandmarkRemark\LandmarkRemark.csproj", "{21A415C7-A729-4562-8D7C-D4C5D2350453}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandmarkRemark.Tests", "LandmarkRemark.Tests\LandmarkRemark.Tests.csproj", "{549C9068-2804-4E8E-A38E-8069543AA6D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{21A415C7-A729-4562-8D7C-D4C5D2350453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21A415C7-A729-4562-8D7C-D4C5D2350453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21A415C7-A729-4562-8D7C-D4C5D2350453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{549C9068-2804-4E8E-A38E-8069543AA6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{549C9068-2804-4E8E-A38E-8069543AA6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{549C9068-2804-4E8E-A38E-8069543AA6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{549C9068-2804-4E8E-A38E-8069543AA6D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
