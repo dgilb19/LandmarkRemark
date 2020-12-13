@@ -144,6 +144,8 @@ The model on testuser and testPinControllers potentially could have been abstrac
 If I was building this with deployments and environments in mind I would have done a few things differently.
 e.g. I would have created a config file and stored variables in there and handled my branches in a better way.
 
+agm.component savePinClicked() does not allow addMarkersFromDB() to work for some reason? not sure why, investigation still required.
+
 ## Build
 Same as last time
 SqlLocalDb may need to be installed by hand initally. 

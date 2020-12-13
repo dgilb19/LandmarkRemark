@@ -91,15 +91,15 @@ export class agmComponent implements OnInit {
         if (note != null && note.trim() != "") {
             console.log("setting note: " + note)
             var pin = {
-                "Userid": 1,
-                "Longitude": 152.9806848,
-                "Latitudes": -28.1581184,
-                "Note": "noteteeteyy"
+                "Userid": 1, // #TODO handle users correctly, this would be the Id of the user loged in.
+                "Longitude": this.lng,
+                "Latitudes": this.lat,
+                "Note": note
             }
             this.apiService.setPin(pin).subscribe((res) => {
                 console.log("Created a pin");
             });
-            this.addMarkersFromDB()
+            this.addMarkersFromDB() // this is not working? 
         }
     }
 
