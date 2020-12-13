@@ -14,14 +14,14 @@ namespace LandmarkRemark.Data
     public class userContext : DbContext//, IDbContext
     {
 
-        public userContext(DbContextOptions<userContext> options)
-            : base(options)
-        {
-        }
-        public userContext()
-        {
-        }
+        public userContext(DbContextOptions<userContext> options) : base(options)
+        { }
+
+        public userContext() // for testing 
+        { }
 
         public virtual DbSet<User> User { get; set; }
-    }
+
+        public DbSet<Pin> Pin { get; set; }
+     }
 }

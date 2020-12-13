@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,58 +11,56 @@ namespace LandmarkRemark.ClientApp.src.app.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class userController : ControllerBase
+    public class PinsController : ControllerBase
     {
         private readonly userContext _context;
 
-        public userController(userContext context) {
+        public PinsController(userContext context)
+        {
             _context = context;
         }
 
-
-
-        // GET: api/user
+        // GET: api/Pins
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> Getuser()
+        public async Task<ActionResult<IEnumerable<Pin>>> GetPin()
         {
-            return await _context.User.ToListAsync();
+            return await _context.Pin.ToListAsync();
         }
 
-        // GET: api/user/5
+        // GET: api/Pins/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> Getuser(int id)
+        public async Task<ActionResult<Pin>> GetPin(int id)
         {
-            var user = await _context.User.FindAsync(id);
+            var pin = await _context.Pin.FindAsync(id);
 
-            if (user == null)
+            if (pin == null)
             {
                 return NotFound();
             }
 
-            return user;
+            return pin;
         }
 
-        // PUT: api/user/5
+        // PUT: api/Pins/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> Putuser(int id, User user)
+        public async Task<IActionResult> PutPin(int id, Pin pin)
         {
-            if (id != user.Id)
+            if (id != pin.PinId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(pin).State = EntityState.Modified;
 
             try
             {
                 await _context.SaveChangesAsync();
-                
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!userExists(id))
+                if (!PinExists(id))
                 {
                     return NotFound();
                 }
@@ -72,41 +70,40 @@ namespace LandmarkRemark.ClientApp.src.app.Controllers
                 }
             }
 
-            return Ok();
+            return NoContent();
         }
-      
-        // POST: api/user
+
+        // POST: api/Pins
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<User>> Postuser(User user)
+        public async Task<ActionResult<Pin>> PostPin(Pin pin)
         {
-            _context.User.Add(user);
-
+            _context.Pin.Add(pin);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("Getuser", new { id = user.Id }, user);
+            return CreatedAtAction("GetPin", new { id = pin.PinId }, pin);
         }
 
-        // DELETE: api/user/5
+        // DELETE: api/Pins/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<User>> Deleteuser(int id)
+        public async Task<ActionResult<Pin>> DeletePin(int id)
         {
-            var user = await _context.User.FindAsync(id);
-            if (user == null)
+            var pin = await _context.Pin.FindAsync(id);
+            if (pin == null)
             {
                 return NotFound();
             }
 
-            _context.User.Remove(user);
+            _context.Pin.Remove(pin);
             await _context.SaveChangesAsync();
 
-            return user;
+            return pin;
         }
 
-        private bool userExists(int id)
+        private bool PinExists(int id)
         {
-            return _context.User.Any(e => e.Id == id);
+            return _context.Pin.Any(e => e.PinId == id);
         }
     }
 }

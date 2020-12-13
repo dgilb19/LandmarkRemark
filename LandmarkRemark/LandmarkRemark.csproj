@@ -31,6 +31,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\Models\Pins.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="ClientApp\angular.json" />
     <Content Include="ClientApp\package-lock.json" />
     <Content Include="ClientApp\package.json" />
