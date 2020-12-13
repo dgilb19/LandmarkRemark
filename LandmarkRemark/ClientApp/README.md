@@ -146,6 +146,7 @@ e.g. I would have created a config file and stored variables in there and handle
 
 ## Build
 Same as last time
+SqlLocalDb may need to be installed by hand initally. 
 
 ```bash
 cd {project}
@@ -178,6 +179,7 @@ ng test
 
 Run LandmarkRemark.Tests in VS19
 Note: only some of the tests are working, they are still in a state of development and were/are being used as a tool to create the API calls.
+Some of the tests should be passing, but are failing on 'await'. Further investiagation required.
 Postman was used to do inital manual testing. 
 
 More tests needed to be created in the spec.ts on AGM service to fully cover the backend work.
